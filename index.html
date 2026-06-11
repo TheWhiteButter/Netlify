@@ -1,0 +1,2078 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The White Butter: Made in Love of Krishna</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ivory: #FDFAF4;
+    --cream: #F5EDD8;
+    --gold: #C4882A;
+    --gold-light: #E8C87A;
+    --gold-pale: #F7EDD0;
+    --charcoal: #1C1A16;
+    --charcoal-mid: #3A3630;
+    --text-muted: #7A7060;
+    --sage: #8A9E8C;
+    --border: rgba(196,136,42,0.2);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--ivory);
+    color: var(--charcoal);
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    line-height: 1.8;
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 4rem;
+    background: rgba(253,250,244,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 0.5px solid var(--border);
+  }
+
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    color: var(--charcoal);
+    text-transform: uppercase;
+  }
+
+  .nav-logo span { color: var(--gold); }
+
+  .nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 400;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--charcoal-mid);
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+
+  .nav-links a:hover { color: var(--gold); }
+
+  .nav-cta {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.68rem;
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    border: 0.5px solid var(--gold);
+    padding: 0.55rem 1.4rem;
+    text-decoration: none;
+    transition: all 0.3s;
+  }
+
+  .nav-cta:hover { background: var(--gold); color: var(--ivory); }
+
+  /* HERO */
+  .hero {
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    padding: 0 4rem 6rem;
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background-image: url('https://thewhitebutter.netlify.app/assets/asset%201.jpeg');
+    background-size: cover;
+    background-position: center 30%;
+    filter: brightness(0.72);
+    transform: scale(1.03);
+    transition: transform 8s ease;
+  }
+
+  .hero-bg.loaded { transform: scale(1); }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(28,26,22,0.75) 0%, rgba(28,26,22,0.1) 60%, transparent 100%);
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 780px;
+  }
+
+  .hero-eyebrow {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.68rem;
+    font-weight: 400;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .hero-eyebrow::before {
+    content: '';
+    display: inline-block;
+    width: 40px;
+    height: 0.5px;
+    background: var(--gold-light);
+  }
+
+  .hero-headline {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3.5rem, 7vw, 6.5rem);
+    font-weight: 300;
+    line-height: 1.05;
+    color: #FDFAF4;
+    margin-bottom: 1.8rem;
+    letter-spacing: -0.01em;
+  }
+
+  .hero-headline em {
+    font-style: italic;
+    color: var(--gold-light);
+  }
+
+  .hero-sub {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 300;
+    letter-spacing: 0.08em;
+    color: rgba(253,250,244,0.75);
+    max-width: 420px;
+    line-height: 1.9;
+    margin-bottom: 2.5rem;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+  }
+
+  .btn-primary {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 400;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--charcoal);
+    background: var(--gold-light);
+    padding: 1rem 2.2rem;
+    text-decoration: none;
+    transition: all 0.3s;
+    border: none;
+    cursor: pointer;
+  }
+
+  .btn-primary:hover { background: var(--gold); color: var(--ivory); }
+
+  .btn-ghost {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 400;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: rgba(253,250,244,0.8);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    transition: color 0.3s;
+  }
+
+  .btn-ghost:hover { color: var(--gold-light); }
+
+  .btn-ghost::after {
+    content: '→';
+    font-size: 0.9rem;
+    transition: transform 0.3s;
+  }
+
+  .btn-ghost:hover::after { transform: translateX(4px); }
+
+  .hero-scroll {
+    position: absolute;
+    bottom: 2.5rem;
+    right: 4rem;
+    z-index: 2;
+    writing-mode: vertical-rl;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.62rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: rgba(253,250,244,0.45);
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+
+  .hero-scroll::after {
+    content: '';
+    width: 0.5px;
+    height: 50px;
+    background: rgba(253,250,244,0.3);
+  }
+
+  /* GOLD RULE — signature element */
+  .gold-rule {
+    display: block;
+    height: 0.5px;
+    background: var(--gold);
+    width: 0;
+    transition: width 1.2s cubic-bezier(0.4,0,0.2,1);
+    margin-bottom: 2rem;
+  }
+
+  .gold-rule.animate { width: 60px; }
+
+  /* SECTION COMMON */
+  section { padding: 8rem 4rem; }
+
+  .section-eyebrow {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.62rem;
+    font-weight: 400;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1rem;
+  }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.2rem, 4vw, 3.8rem);
+    font-weight: 300;
+    line-height: 1.12;
+    color: var(--charcoal);
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.01em;
+  }
+
+  .section-title em {
+    font-style: italic;
+    color: var(--gold);
+  }
+
+  .section-body {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 300;
+    line-height: 1.95;
+    color: var(--text-muted);
+    max-width: 500px;
+  }
+
+  /* INTRO — THE NAME */
+  .intro {
+    background: var(--ivory);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    padding: 0;
+    align-items: stretch;
+  }
+
+  .intro-text {
+    padding: 8rem 5rem 8rem 6rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .intro-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.4rem, 2.5vw, 2.2rem);
+    font-weight: 300;
+    font-style: italic;
+    line-height: 1.5;
+    color: var(--charcoal);
+    margin: 2rem 0;
+    padding-left: 1.5rem;
+    border-left: 0.5px solid var(--gold);
+  }
+
+  .intro-image {
+    position: relative;
+    overflow: hidden;
+    min-height: 600px;
+  }
+
+  .intro-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 6s ease;
+  }
+
+  .intro-image:hover img { transform: scale(1.04); }
+
+  /* PHILOSOPHY */
+  .philosophy {
+    background: var(--charcoal);
+    padding: 8rem 4rem;
+    text-align: center;
+  }
+
+  .philosophy .section-eyebrow { color: var(--gold-light); }
+  .philosophy .section-title { color: var(--ivory); max-width: 100%; }
+  .philosophy .gold-rule { margin: 0 auto 2rem; }
+
+  .philosophy-intro {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-weight: 300;
+    font-style: italic;
+    color: rgba(253,250,244,0.6);
+    max-width: 580px;
+    margin: 0 auto 5rem;
+    line-height: 1.8;
+  }
+
+  .pillars {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0;
+    margin-top: 1rem;
+  }
+
+  .pillar {
+    padding: 3rem 2rem;
+    border-left: 0.5px solid rgba(196,136,42,0.2);
+    text-align: left;
+    transition: background 0.4s;
+  }
+
+  .pillar:first-child { border-left: none; }
+  .pillar:hover { background: rgba(196,136,42,0.05); }
+
+  .pillar-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.8rem;
+    font-weight: 300;
+    color: rgba(196,136,42,0.25);
+    line-height: 1;
+    margin-bottom: 1.2rem;
+  }
+
+  .pillar-title {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 1rem;
+  }
+
+  .pillar-body {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 300;
+    line-height: 1.85;
+    color: rgba(253,250,244,0.5);
+  }
+
+  /* LOCATION */
+  .location {
+    background: var(--charcoal);
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .location-hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+  }
+
+  .location-bg-image {
+    position: absolute;
+    inset: 0;
+    background-image: url('https://thewhitebutter.netlify.app/assets/premmandir.jpg');
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.35);
+    transform: scale(1.05);
+    transition: transform 12s ease;
+  }
+
+  .location-hero.loaded .location-bg-image { transform: scale(1); }
+
+  .location-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(28,26,22,0.85) 0%, rgba(28,26,22,0.4) 50%, rgba(28,26,22,0.6) 100%);
+  }
+
+  .location-hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 10rem 6rem;
+    max-width: 900px;
+  }
+
+  .location-eyebrow {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 400;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .location-eyebrow::before {
+    content: '';
+    display: inline-block;
+    width: 50px;
+    height: 0.5px;
+    background: var(--gold-light);
+  }
+
+  .location-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3rem, 6vw, 5.5rem);
+    font-weight: 300;
+    line-height: 1.08;
+    color: var(--ivory);
+    margin-bottom: 2.5rem;
+    letter-spacing: -0.02em;
+  }
+
+  .location-title em {
+    font-style: italic;
+    color: var(--gold-light);
+  }
+
+  .location-tagline {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    font-weight: 300;
+    font-style: italic;
+    color: rgba(253,250,244,0.6);
+    line-height: 1.6;
+    max-width: 550px;
+    margin-bottom: 4rem;
+    padding-left: 1.5rem;
+    border-left: 0.5px solid var(--gold);
+  }
+
+  .location-stats {
+    display: flex;
+    gap: 4rem;
+    margin-bottom: 3rem;
+  }
+
+  .location-stat {
+    text-align: left;
+  }
+
+  .location-stat-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    font-weight: 300;
+    color: var(--gold-light);
+    line-height: 1;
+    margin-bottom: 0.4rem;
+  }
+
+  .location-stat-label {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.62rem;
+    font-weight: 400;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: rgba(253,250,244,0.4);
+  }
+
+  .location-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    text-decoration: none;
+    transition: all 0.3s;
+  }
+
+  .location-cta:hover { color: var(--ivory); }
+
+  .location-cta svg {
+    width: 40px;
+    height: 40px;
+    border: 0.5px solid var(--gold);
+    border-radius: 50%;
+    padding: 10px;
+    transition: all 0.3s;
+  }
+
+  .location-cta:hover svg {
+    background: var(--gold);
+    border-color: var(--gold);
+  }
+
+  /* VIEWS SECTION */
+  .views-section {
+    background: var(--cream);
+    padding: 8rem 6rem;
+  }
+
+  .views-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    margin-bottom: 5rem;
+    align-items: end;
+  }
+
+  .views-intro {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--text-muted);
+    line-height: 1.8;
+  }
+
+  .views-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    margin-bottom: 5rem;
+  }
+
+  .view-card {
+    position: relative;
+    overflow: hidden;
+    background: var(--ivory);
+    transition: all 0.4s;
+  }
+
+  .view-card:hover {
+    background: var(--gold-pale);
+    transform: translateY(-4px);
+    box-shadow: 0 20px 60px rgba(28,26,22,0.08);
+  }
+
+  .view-card-image {
+    height: 280px;
+    overflow: hidden;
+  }
+
+  .view-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 6s ease;
+  }
+
+  .view-card:hover .view-card-image img { transform: scale(1.08); }
+
+  .view-card-content {
+    padding: 2.5rem 2rem;
+  }
+
+  .view-elevation {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .view-elevation-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.5rem;
+    font-weight: 300;
+    color: var(--gold);
+    line-height: 1;
+    opacity: 0.3;
+  }
+
+  .view-elevation-label {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.62rem;
+    font-weight: 500;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+
+  .view-card-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--charcoal);
+    margin-bottom: 0.8rem;
+    line-height: 1.3;
+  }
+
+  .view-card-desc {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 300;
+    color: var(--text-muted);
+    line-height: 1.8;
+  }
+
+  .view-card-sacred {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 0.5px solid var(--border);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.95rem;
+    font-style: italic;
+    color: var(--gold);
+  }
+
+  /* SACRED PROXIMITY */
+  .sacred-proximity {
+    background: var(--cream);
+    padding: 0 6rem 8rem;
+  }
+
+  .proximity-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2px;
+  }
+
+  .proximity-item {
+    background: var(--ivory);
+    padding: 2rem 1.5rem;
+    text-align: center;
+    transition: all 0.3s;
+  }
+
+  .proximity-item:hover {
+    background: var(--gold-pale);
+  }
+
+  .proximity-icon {
+    width: 48px;
+    height: 48px;
+    margin: 0 auto 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .proximity-icon svg {
+    width: 32px;
+    height: 32px;
+    stroke: var(--gold);
+    fill: none;
+    stroke-width: 1;
+  }
+
+  .proximity-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--charcoal);
+    margin-bottom: 0.4rem;
+  }
+
+  .proximity-distance {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.68rem;
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+
+  .proximity-note {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 300;
+    color: var(--text-muted);
+    margin-top: 0.8rem;
+    line-height: 1.6;
+  }
+
+  /* DECORATIVE DIVIDER */
+  .location-divider {
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--gold), transparent);
+    margin: 0 6rem;
+  }
+
+  /* PROJECT / THE RESIDENCES */
+  .residences {
+    background: var(--charcoal);
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .residences-hero {
+    position: relative;
+    padding: 10rem 6rem 8rem;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 6rem;
+    align-items: center;
+    min-height: 80vh;
+  }
+
+  .residences-hero-bg {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 45%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .residences-hero-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.4;
+    filter: brightness(0.6) saturate(0.8);
+  }
+
+  .residences-hero-overlay {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 45%;
+    height: 100%;
+    background: linear-gradient(to left, var(--charcoal) 0%, transparent 50%);
+  }
+
+  .residences-content {
+    position: relative;
+    z-index: 2;
+  }
+
+  .residences-eyebrow {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.62rem;
+    font-weight: 400;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 2rem;
+  }
+
+  .residences-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.8rem, 5vw, 4.5rem);
+    font-weight: 300;
+    line-height: 1.1;
+    color: var(--ivory);
+    margin-bottom: 2rem;
+    letter-spacing: -0.01em;
+  }
+
+  .residences-title em {
+    font-style: italic;
+    color: var(--gold-light);
+  }
+
+  .residences-body {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 300;
+    line-height: 1.95;
+    color: rgba(253,250,244,0.55);
+    max-width: 480px;
+    margin-bottom: 3rem;
+  }
+
+  .residences-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--gold-light);
+    line-height: 1.6;
+    padding-left: 1.5rem;
+    border-left: 0.5px solid var(--gold);
+    max-width: 400px;
+  }
+
+  /* FEATURED NUMBER */
+  .residences-featured {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .residences-number-hero {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .residences-number-hero .number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(8rem, 15vw, 14rem);
+    font-weight: 300;
+    color: var(--ivory);
+    line-height: 1;
+    letter-spacing: -0.05em;
+    opacity: 0.9;
+  }
+
+  .residences-number-hero .number-label {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 400;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-top: 1rem;
+  }
+
+  .residences-number-hero .number-tagline {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-style: italic;
+    color: rgba(253,250,244,0.4);
+    margin-top: 0.5rem;
+  }
+
+  /* MILESTONES STRIP */
+  .residences-milestones {
+    background: rgba(196,136,42,0.06);
+    border-top: 0.5px solid rgba(196,136,42,0.15);
+    border-bottom: 0.5px solid rgba(196,136,42,0.15);
+    padding: 5rem 6rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+  }
+
+  .milestone {
+    padding: 2rem 3rem;
+    text-align: center;
+    border-right: 0.5px solid rgba(196,136,42,0.15);
+    transition: background 0.4s;
+  }
+
+  .milestone:last-child { border-right: none; }
+  .milestone:hover { background: rgba(196,136,42,0.08); }
+
+  .milestone-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.5rem;
+    font-weight: 300;
+    color: var(--gold-light);
+    line-height: 1;
+    margin-bottom: 0.8rem;
+  }
+
+  .milestone-label {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 400;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: rgba(137, 93, 6, 0.5);
+    margin-bottom: 0.5rem;
+  }
+
+  .milestone-desc {
+    font-family: 'Jost', sans-serif;
+    font-size: 1rem;
+    font-weight: 300;
+    color: rgba(10, 9, 6, 0.35);
+    line-height: 1.6;
+  }
+
+  /* RESIDENCES DETAILS */
+  .residences-details {
+    background: var(--cream);
+    padding: 8rem 6rem;
+  }
+
+  .details-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: start;
+  }
+
+  .details-intro {
+    padding-top: 2rem;
+  }
+
+  .details-intro .section-eyebrow { color: var(--gold); }
+
+  .details-intro .section-title {
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    margin-bottom: 1.5rem;
+  }
+
+  .details-intro .section-body {
+    max-width: 100%;
+    margin-bottom: 2rem;
+  }
+
+  .details-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .detail-item {
+    display: grid;
+    grid-template-columns: 50px 1fr;
+    gap: 1.5rem;
+    padding: 1.8rem 0;
+    border-bottom: 0.5px solid var(--border);
+    align-items: start;
+  }
+
+  .detail-item:first-child { border-top: 0.5px solid var(--border); }
+
+  .detail-icon {
+    width: 40px;
+    height: 40px;
+    border: 0.5px solid var(--border);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gold);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.3s;
+  }
+
+  .detail-item:hover .detail-icon {
+    background: var(--gold);
+    border-color: var(--gold);
+    color: var(--ivory);
+  }
+
+  .detail-content h4 {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--charcoal);
+    margin-bottom: 0.3rem;
+    letter-spacing: 0.05em;
+  }
+
+  .detail-content p {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 300;
+    color: var(--text-muted);
+    line-height: 1.7;
+  }
+
+  /* RESIDENCES IMAGE GALLERY */
+  .residences-gallery {
+    background: var(--cream);
+    padding: 0 6rem 8rem;
+  }
+
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 4px;
+    height: 500px;
+  }
+
+  .gallery-main {
+    overflow: hidden;
+    position: relative;
+  }
+
+  .gallery-main img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 6s ease;
+  }
+
+  .gallery-main:hover img { transform: scale(1.04); }
+
+  .gallery-small {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    gap: 4px;
+    overflow: hidden;
+  }
+
+  .gallery-small img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 6s ease;
+  }
+
+  .gallery-small:hover img { transform: scale(1.04); }
+
+  .gallery-caption {
+    position: absolute;
+    bottom: 2rem;
+    left: 2rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-style: italic;
+    color: rgba(253,250,244,0.85);
+    font-weight: 300;
+    z-index: 2;
+  }
+
+  .gallery-caption::before {
+    content: '"';
+    font-size: 2rem;
+    color: var(--gold);
+    margin-right: 0.3rem;
+  }
+
+  /* ARCHITECTURE */
+  .architecture {
+    background: var(--cream);
+    padding: 8rem 6rem;
+  }
+
+  .arch-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 6rem;
+    margin-top: 5rem;
+    align-items: start;
+  }
+
+  .arch-features {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .arch-feature {
+    padding: 2rem 0;
+    border-bottom: 0.5px solid var(--border);
+    display: grid;
+    grid-template-columns: 28px 1fr;
+    gap: 1rem;
+    align-items: start;
+  }
+
+  .arch-feature:first-child { border-top: 0.5px solid var(--border); }
+
+  .arch-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--gold);
+    margin-top: 0.55rem;
+  }
+
+  .arch-feature-text strong {
+    display: block;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    color: var(--charcoal);
+    margin-bottom: 0.3rem;
+  }
+
+  .arch-feature-text span {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 300;
+    color: var(--text-muted);
+    line-height: 1.7;
+  }
+
+  .arch-images {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3px;
+  }
+
+  .arch-img {
+    overflow: hidden;
+    aspect-ratio: 3/4;
+  }
+
+  .arch-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 5s ease;
+  }
+
+  .arch-img:hover img { transform: scale(1.05); }
+
+  .arch-img.tall {
+    grid-row: span 2;
+    aspect-ratio: auto;
+  }
+
+  /* LANDMARKS */
+  .landmarks {
+    background: var(--ivory);
+    padding: 8rem 6rem;
+  }
+
+  .landmarks-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    margin-top: 4rem;
+  }
+
+  .landmark-card {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 3/4;
+  }
+
+  .landmark-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 6s ease;
+    filter: brightness(0.8);
+  }
+
+  .landmark-card:hover img {
+    transform: scale(1.06);
+    filter: brightness(0.65);
+  }
+
+  .landmark-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0; right: 0;
+    padding: 3rem 2rem 2rem;
+    background: linear-gradient(to top, rgba(28,26,22,0.9) 0%, transparent 100%);
+  }
+
+  .landmark-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: var(--ivory);
+    margin-bottom: 0.4rem;
+  }
+
+  .landmark-desc {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 300;
+    color: rgba(253,250,244,0.65);
+    line-height: 1.6;
+  }
+
+  /* AUDIENCE / CALLING */
+  .calling {
+    background: var(--charcoal);
+    padding: 8rem 6rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8rem;
+    align-items: center;
+  }
+
+  .calling .section-eyebrow { color: var(--gold-light); }
+  .calling .section-title { color: var(--ivory); }
+  .calling .section-body { color: rgba(253,250,244,0.5); }
+  .calling .gold-rule { }
+
+  .calling-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-top: 2.5rem;
+  }
+
+  .calling-item {
+    padding: 1.4rem 0;
+    border-bottom: 0.5px solid rgba(196,136,42,0.15);
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 300;
+    color: rgba(253,250,244,0.7);
+    transition: color 0.3s;
+  }
+
+  .calling-item:first-child { border-top: 0.5px solid rgba(196,136,42,0.15); }
+  .calling-item:hover { color: var(--gold-light); }
+
+  .calling-item::before {
+    content: '';
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--gold);
+    flex-shrink: 0;
+    opacity: 0.6;
+  }
+
+  .calling-markets {
+    margin-top: 2rem;
+  }
+
+  .market-label {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.62rem;
+    font-weight: 400;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.2rem;
+  }
+
+  .market-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .market-tag {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 300;
+    letter-spacing: 0.1em;
+    color: rgba(253,250,244,0.6);
+    border: 0.5px solid rgba(196,136,42,0.3);
+    padding: 0.35rem 0.9rem;
+    transition: all 0.3s;
+  }
+
+  .market-tag:hover {
+    background: rgba(196,136,42,0.1);
+    color: var(--gold-light);
+  }
+
+  /* SACRED QUOTE */
+  .sacred-quote {
+    background: var(--cream);
+    padding: 9rem 6rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .sacred-quote::before {
+    content: '॥';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 30rem;
+    color: rgba(196,136,42,0.04);
+    pointer-events: none;
+    line-height: 1;
+  }
+
+  .sq-inner {
+    position: relative;
+    z-index: 1;
+    max-width: 780px;
+    margin: 0 auto;
+  }
+
+  .sq-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-weight: 300;
+    font-style: italic;
+    line-height: 1.3;
+    color: var(--charcoal);
+    margin-bottom: 2rem;
+  }
+
+  .sq-attribution {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 400;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+
+  /* MANAGEMENT */
+  .management {
+    background: var(--ivory);
+    padding: 6rem 6rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4rem;
+    border-top: 0.5px solid var(--border);
+    border-bottom: 0.5px solid var(--border);
+  }
+
+  .mgmt-text {
+    flex: 1;
+  }
+
+  .mgmt-label {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.62rem;
+    font-weight: 400;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 0.8rem;
+  }
+
+  .mgmt-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem;
+    font-weight: 300;
+    color: var(--charcoal);
+  }
+
+  .mgmt-firms {
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+  }
+
+  .mgmt-firm {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    border: 0.5px solid var(--border);
+    padding: 0.8rem 1.6rem;
+    transition: all 0.3s;
+  }
+
+  .mgmt-firm:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+  }
+
+  /* CTA / FOOTER */
+  .cta-section {
+    background: var(--charcoal);
+    padding: 10rem 6rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cta-section::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 50%;
+    transform: translateX(-50%);
+    width: 1px;
+    height: 80px;
+    background: linear-gradient(to bottom, var(--gold), transparent);
+  }
+
+  .cta-eyebrow {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.62rem;
+    font-weight: 400;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 2rem;
+  }
+
+  .cta-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.5rem, 5vw, 5rem);
+    font-weight: 300;
+    font-style: italic;
+    color: var(--ivory);
+    line-height: 1.15;
+    margin-bottom: 1.5rem;
+  }
+
+  .cta-sub {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 300;
+    color: rgba(253,250,244,0.45);
+    max-width: 440px;
+    margin: 0 auto 3.5rem;
+    line-height: 1.9;
+    letter-spacing: 0.03em;
+  }
+
+  .cta-actions {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .cta-btn {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 400;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--charcoal);
+    background: var(--gold-light);
+    padding: 1.1rem 2.8rem;
+    text-decoration: none;
+    transition: all 0.3s;
+    cursor: pointer;
+    border: none;
+  }
+
+  .cta-btn:hover { background: var(--gold); }
+
+  .cta-link {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 400;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: rgba(253,250,244,0.5);
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+
+  .cta-link:hover { color: var(--gold-light); }
+
+  /* FOOTER */
+  footer {
+    background: #151310;
+    padding: 3rem 6rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .footer-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.9rem;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(253,250,244,0.4);
+  }
+
+  .footer-logo span { color: var(--gold); }
+
+  .footer-devika {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.62rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: rgba(253,250,244,0.2);
+  }
+
+  .footer-devika span { color: rgba(253,250,244,0.35); }
+
+  /* SCROLL ANIMATIONS */
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.9s ease, transform 0.9s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .reveal-delay-1 { transition-delay: 0.15s; }
+  .reveal-delay-2 { transition-delay: 0.3s; }
+  .reveal-delay-3 { transition-delay: 0.45s; }
+
+  @media (max-width: 900px) {
+    nav { padding: 1.2rem 1.5rem; }
+    .nav-links, .nav-cta { display: none; }
+    section { padding: 5rem 1.5rem; }
+    .intro, .calling { grid-template-columns: 1fr; }
+    .intro-image { min-height: 350px; }
+    .intro-text { padding: 4rem 1.5rem; }
+    .pillars { grid-template-columns: 1fr 1fr; }
+    .pillar:nth-child(1) { border-left: none; }
+    .landmarks-grid { grid-template-columns: 1fr; }
+    .architecture, .landmarks, .calling, .sacred-quote, .management, .cta-section { padding: 5rem 1.5rem; }
+    .arch-grid { grid-template-columns: 1fr; gap: 3rem; }
+    .arch-images { grid-template-columns: 1fr 1fr; }
+    .mgmt-firms { flex-wrap: wrap; gap: 1rem; }
+    .management { flex-direction: column; align-items: flex-start; }
+    .hero { padding: 0 1.5rem 5rem; }
+    .hero-scroll { display: none; }
+    footer { flex-direction: column; gap: 1rem; padding: 2.5rem 1.5rem; }
+    .location-hero-content { padding: 8rem 1.5rem; }
+    .location-title { font-size: 2.5rem; }
+    .location-stats { flex-direction: column; gap: 2rem; }
+    .views-section { padding: 5rem 1.5rem; }
+    .views-header { grid-template-columns: 1fr; gap: 2rem; }
+    .views-grid { grid-template-columns: 1fr; }
+    .sacred-proximity { padding: 0 1.5rem 5rem; }
+    .proximity-grid { grid-template-columns: 1fr 1fr; }
+    .location-divider { margin: 0 1.5rem; }
+    .residences-hero { grid-template-columns: 1fr; padding: 8rem 1.5rem 5rem; }
+    .residences-hero-bg { display: none; }
+    .residences-featured { margin-top: 3rem; }
+    .residences-number-hero .number { font-size: 6rem; }
+    .residences-milestones { grid-template-columns: 1fr 1fr; padding: 4rem 1.5rem; }
+    .milestone { border-right: none; border-bottom: 0.5px solid rgba(196,136,42,0.15); padding: 2rem 0; }
+    .milestone:last-child { border-bottom: none; }
+    .residences-details { padding: 5rem 1.5rem; }
+    .details-grid { grid-template-columns: 1fr; gap: 3rem; }
+    .residences-gallery { padding: 0 1.5rem 5rem; }
+    .gallery-grid { grid-template-columns: 1fr; height: auto; }
+    .gallery-main { height: 300px; }
+    .gallery-small { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">The <span>White Butter</span></div>
+  <ul class="nav-links">
+    <li><a href="#story">Our Story</a></li>
+    <li><a href="#location">Location</a></li>
+    <li><a href="#project">The Project</a></li>
+    <li><a href="#landmarks">Landmarks</a></li>
+  </ul>
+  <a href="#cta" class="nav-cta">Inquire</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-bg" id="heroBg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">Vrindavan · By Devika</p>
+    <h1 class="hero-headline">Made in<br><em>love of Krishna</em></h1>
+    <p class="hero-sub">130 curated residences in the heart of the sacred city. Opposite Prem Mandir. Above the Yamuna horizon.</p>
+    <div class="hero-actions">
+      <a href="#story" class="btn-primary">Discover the Story</a>
+      <a href="#project" class="btn-ghost">View the Project</a>
+    </div>
+  </div>
+  <div class="hero-scroll">Scroll</div>
+</section>
+
+<!-- INTRO — THE NAME -->
+<section class="intro" id="story">
+  <div class="intro-text reveal">
+    <p class="section-eyebrow">Why the White Butter</p>
+    <span class="gold-rule"></span>
+    <h2 class="section-title">Not mythology<br>recreated.<br><em>Emotion reimagined.</em></h2>
+    <blockquote class="intro-quote">
+      "In Krishna's childhood, makhan was never just food.<br>It was innocence. Purity. Warmth. Unconditional love."
+    </blockquote>
+    <p class="section-body">Brijwasis would churn butter through the night — not to store it, but secretly hoping Krishna would come and steal it. In Vrindavan, even stolen butter felt sacred. From that timeless feeling, The White Butter was imagined.</p>
+  </div>
+  <div class="intro-image">
+    <img src="https://thewhitebutter.netlify.app/assets/unnamed.webp" alt="Sacred Vrindavan streets at dawn" loading="lazy">
+  </div>
+</section>
+
+<!-- PHILOSOPHY -->
+<section class="philosophy" id="philosophy">
+  <p class="section-eyebrow reveal">The Philosophy</p>
+  <span class="gold-rule reveal reveal-delay-1"></span>
+  <h2 class="section-title reveal reveal-delay-2">Five pillars.<br>One soul.</h2>
+  <p class="philosophy-intro reveal reveal-delay-3">"It's not a decision. It's permission."</p>
+  <div class="pillars">
+    <div class="pillar reveal">
+      <div class="pillar-number">I</div>
+      <div class="pillar-title">Unhurried</div>
+      <p class="pillar-body">Luxury here never rushes. Just as butter is made slowly, with patience, this residence does not chase. It simply is.</p>
+    </div>
+    <div class="pillar reveal reveal-delay-1">
+      <div class="pillar-number">II</div>
+      <div class="pillar-title">Rooted</div>
+      <p class="pillar-body">Deeply spiritual. Quietly timeless. Anchored in the geography and living energy of Vrindavan.</p>
+    </div>
+    <div class="pillar reveal reveal-delay-2">
+      <div class="pillar-number">III</div>
+      <div class="pillar-title">Elevated</div>
+      <p class="pillar-body">An enhancement of the traditional. The familiar made extraordinary. Living in Vrindavan, elevated to its finest form.</p>
+    </div>
+    <div class="pillar reveal reveal-delay-3">
+      <div class="pillar-number">IV</div>
+      <div class="pillar-title">Protective</div>
+      <p class="pillar-body">Inspired by the shelter of Govardhan Hill. Strength that shields. Care that endures across generations.</p>
+    </div>
+    <div class="pillar reveal" style="transition-delay:0.6s">
+      <div class="pillar-number">V</div>
+      <div class="pillar-title">Pure</div>
+      <p class="pillar-body">Pure as butter. Pure as the vibe of Vrindavan. No compromise. No excess. Only the essential.</p>
+    </div>
+  </div>
+</section>
+
+<!-- LOCATION -->
+<section class="location" id="location">
+  <div class="location-hero" id="locationHero">
+    <div class="location-bg-image"></div>
+    <div class="location-hero-overlay"></div>
+    <div class="location-hero-content reveal">
+      <p class="location-eyebrow">Sacred Placement</p>
+      <h2 class="location-title">Where devotion<br>becomes your<br><em>daily address.</em></h2>
+      <p class="location-tagline">"Not all addresses are equal. Some carry the weight of centuries, the whisper of shringar, and the eternal presence of the divine."</p>
+      <div class="location-stats">
+        <div class="location-stat">
+          <div class="location-stat-number">Prem Mandir</div>
+          <div class="location-stat-label">1 KM Away Only</div>
+        </div>
+        <div class="location-stat">
+          <div class="location-stat-number">15 Min</div>
+          <div class="location-stat-label">To Yamuna Ghat</div>
+        </div>
+        <div class="location-stat">
+          <div class="location-stat-number">∞</div>
+          <div class="location-stat-label">Years of Sacred Energy</div>
+        </div>
+      </div>
+      <a href="#project" class="location-cta">
+        Explore the Views
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M12 5v14M5 12l7 7 7-7"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- VIEWS SECTION -->
+<section class="views-section">
+  <div class="views-header reveal">
+    <div>
+      <p class="section-eyebrow">The Elevation Journey</p>
+      <span class="gold-rule"></span>
+      <h2 class="section-title">Three heights.<br><em>Three sacred perspectives.</em></h2>
+    </div>
+    <p class="views-intro">From the bustling energy of Prem Mandir at your doorstep to the transcendent silence of the Yamuna horizon — every floor offers a different dimension of Vrindavan's eternal presence.</p>
+  </div>
+  <div class="views-grid">
+    <div class="view-card reveal">
+      <div class="view-card-image">
+        <img src="https://thewhitebutter.netlify.app/assets/premmandir.jpg" alt="Prem Mandir at Ground Level" loading="lazy">
+      </div>
+      <div class="view-card-content">
+        <div class="view-elevation">
+          <span class="view-elevation-number">01</span>
+          <span class="view-elevation-label">Ground Level</span>
+        </div>
+        <h3 class="view-card-title">Prem Mandir: Your Neighbor</h3>
+        <p class="view-card-desc">A marble symphony of devotion, visible from your doorstep. Every evening, the temple illuminates — a daily reminder that the sacred is never far.</p>
+        <p class="view-card-sacred">"Where faith meets architecture in perfect stillness."</p>
+      </div>
+    </div>
+    <div class="view-card reveal reveal-delay-1">
+      <div class="view-card-image">
+        <img src="https://thewhitebutter.netlify.app/assets/bankebihari.webp" alt="Banke Bihari Temple View" loading="lazy">
+      </div>
+      <div class="view-card-content">
+        <div class="view-elevation">
+          <span class="view-elevation-number">10</span>
+          <span class="view-elevation-label">10th Floor</span>
+        </div>
+        <h3 class="view-card-title">Banke Bihari: In the Distance</h3>
+        <p class="view-card-desc">The spiritual heartbeat of Vrindavan, visible on the horizon. From here, Banke Bihari isn't a destination — it's a presence that accompanies your mornings and evenings.</p>
+        <p class="view-card-sacred">"Devotion that watches over your day."</p>
+      </div>
+    </div>
+    <div class="view-card reveal reveal-delay-2">
+      <div class="view-card-image">
+        <img src="https://thewhitebutter.netlify.app/assets/kesighat.jpg" alt="Yamuna Horizon from Rooftop" loading="lazy">
+      </div>
+      <div class="view-card-content">
+        <div class="view-elevation">
+          <span class="view-elevation-number">∞</span>
+          <span class="view-elevation-label">Rooftop</span>
+        </div>
+        <h3 class="view-card-title">Yamuna: The Eternal Horizon</h3>
+        <p class="view-card-desc">The sunset skyline of Braj unfolds before you. The Yamuna flows silver beneath the golden hour. Spiritual stillness above the city. Some views aren't seen — they are felt in the soul.</p>
+        <p class="view-card-sacred">"Where earth meets eternity."</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SACRED PROXIMITY -->
+<section class="sacred-proximity">
+  <div class="location-divider"></div>
+  <div class="proximity-grid" style="margin-top: 2px;">
+    <div class="proximity-item reveal">
+      <div class="proximity-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+      </div>
+      <div class="proximity-name">Prem Mandir</div>
+      <div class="proximity-distance">1 KM Away Only</div>
+      <p class="proximity-note">Walk to evening aarti in under 2 minutes</p>
+    </div>
+    <div class="proximity-item reveal reveal-delay-1">
+      <div class="proximity-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"/><circle cx="12" cy="10" r="3"/></svg>
+      </div>
+      <div class="proximity-name">Banke Bihari</div>
+      <div class="proximity-distance">3.7 km</div>
+      <p class="proximity-note">The heart of Vrindavan's spiritual map</p>
+    </div>
+    <div class="proximity-item reveal reveal-delay-2">
+      <div class="proximity-icon">
+        <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      </div>
+      <div class="proximity-name">Keshi Ghat</div>
+      <div class="proximity-distance">15 min drive</div>
+      <p class="proximity-note">Sacred riverbank for morning sadhana</p>
+    </div>
+    <div class="proximity-item reveal reveal-delay-3">
+      <div class="proximity-icon">
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+      </div>
+      <div class="proximity-name">ISKCON</div>
+      <div class="proximity-distance">3.5 km</div>
+      <p class="proximity-note">Global Krishna consciousness hub</p>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECT / THE RESIDENCES -->
+<section class="residences" id="project">
+  <div class="residences-hero">
+    <div class="residences-hero-bg">
+      <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=900&q=80" alt="The White Butter Building Render">
+      <div class="residences-hero-overlay"></div>
+    </div>
+    <div class="residences-content reveal">
+      <p class="residences-eyebrow">The Project</p>
+      <h2 class="residences-title">Not crowded<br>luxury.<br><em>Curated luxury.</em></h2>
+      <p class="residences-body">130 residences. One garden. A premium commercial front. A boutique scale designed so that every resident feels chosen, not counted.</p>
+      <p class="residences-quote">"Boutique. Private. Intentional."</p>
+    </div>
+    <div class="residences-featured reveal reveal-delay-1">
+      <div class="residences-number-hero">
+        <div class="number">130</div>
+        <div class="number-label">Curated Residences</div>
+        <div class="number-tagline">— the perfect number of chanting</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESIDENCES MILESTONES -->
+<section class="residences-milestones">
+  <div class="milestone reveal">
+    <div class="milestone-number">10+</div>
+    <div class="milestone-label">Floors</div>
+    <div class="milestone-desc">Of sacred views, from ground to sky</div>
+  </div>
+  <div class="milestone reveal reveal-delay-1">
+    <div class="milestone-number">∞</div>
+    <div class="milestone-label">Years</div>
+    <div class="milestone-desc">Of Vrindavan's eternal presence</div>
+  </div>
+  <div class="milestone reveal reveal-delay-2">
+    <div class="milestone-number">1954</div>
+    <div class="milestone-label">Devika Group</div>
+    <div class="milestone-desc">Established, trusted, proven</div>
+  </div>
+  <div class="milestone reveal reveal-delay-3">
+    <div class="milestone-number">1</div>
+    <div class="milestone-label">Garden</div>
+    <div class="milestone-desc">A curated sanctuary of stillness</div>
+  </div>
+</section>
+
+<!-- RESIDENCES DETAILS -->
+<section class="residences-details">
+  <div class="details-grid">
+    <div class="details-intro reveal">
+      <p class="section-eyebrow">Boutique by Design</p>
+      <span class="gold-rule"></span>
+      <h2 class="section-title">Every detail<br><em>considered.</em></h2>
+      <p class="section-body">At The White Butter, luxury is not about abundance — it's about intention. Every element has been thoughtfully placed to create a living experience that feels both sacred and sophisticated.</p>
+    </div>
+    <div class="details-list">
+      <div class="detail-item reveal">
+        <div class="detail-icon">I</div>
+        <div class="detail-content">
+          <h4>Premium Commercial Frontage</h4>
+          <p>World-class dining and retail at the ground level — curated brands that complement the sacred atmosphere.</p>
+        </div>
+      </div>
+      <div class="detail-item reveal reveal-delay-1">
+        <div class="detail-icon">II</div>
+        <div class="detail-content">
+          <h4>The White Butter Garden</h4>
+          <p>A private green sanctuary within the residence — a meditative space that brings Braj's natural beauty indoors.</p>
+        </div>
+      </div>
+      <div class="detail-item reveal reveal-delay-2">
+        <div class="detail-icon">III</div>
+        <div class="detail-content">
+          <h4>Sacred Material Palette</h4>
+          <p>Italian stones, copper-toned accents, and crystal chandeliers — materials that honor both luxury and tradition.</p>
+        </div>
+      </div>
+      <div class="detail-item reveal reveal-delay-3">
+        <div class="detail-icon">IV</div>
+        <div class="detail-content">
+          <h4>Crafted for Generations</h4>
+          <p>Built with the care and permanence of Govardhan Hill — a legacy that endures across time.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ARCHITECTURE -->
+<section class="architecture" id="architecture">
+  <p class="section-eyebrow reveal">Architecture & Design</p>
+  <span class="gold-rule reveal reveal-delay-1"></span>
+  <h2 class="section-title reveal reveal-delay-2">Designed by a <em>Colombian architect.</em><br>Rooted in Indian soul.</h2>
+  <div class="arch-grid">
+    <div class="arch-features">
+      <div class="arch-feature reveal">
+        <div class="arch-dot"></div>
+        <div class="arch-feature-text">
+          <strong>Fluid Modernity</strong>
+          <span>Clean lines that breathe. A structure that does not announce itself but slowly reveals its beauty.</span>
+        </div>
+      </div>
+      <div class="arch-feature reveal reveal-delay-1">
+        <div class="arch-dot"></div>
+        <div class="arch-feature-text">
+          <strong>Copper-Toned Identity</strong>
+          <span>Premium copper branding throughout — warm, aged, precious. The palette of sacred metals.</span>
+        </div>
+      </div>
+      <div class="arch-feature reveal reveal-delay-2">
+        <div class="arch-dot"></div>
+        <div class="arch-feature-text">
+          <strong>Moonlight Ambient Lighting</strong>
+          <span>Warm lighting inspired by the way moonlight falls on the Yamuna — soft, perpetual, spiritual.</span>
+        </div>
+      </div>
+      <div class="arch-feature reveal reveal-delay-3">
+        <div class="arch-dot"></div>
+        <div class="arch-feature-text">
+          <strong>Italian Stones & Crystal Chandeliers</strong>
+          <span>World-class materials meeting the timeless aesthetic of Braj. Luxury that speaks softly.</span>
+        </div>
+      </div>
+      <div class="arch-feature reveal" style="transition-delay:0.45s">
+        <div class="arch-dot"></div>
+        <div class="arch-feature-text">
+          <strong>The White Butter Garden</strong>
+          <span>A curated green sanctuary within the residence — stillness in the middle of the sacred city.</span>
+        </div>
+      </div>
+      <div class="arch-feature reveal" style="transition-delay:0.6s">
+        <div class="arch-dot"></div>
+        <div class="arch-feature-text">
+          <strong>Premium Commercial Frontage</strong>
+          <span>World-class dining and retail at the ground level — Starbucks, Versace, Café La Poya and more.</span>
+        </div>
+      </div>
+    </div>
+    <div class="arch-images">
+      <div class="arch-img tall reveal">
+        <img src="https://i.pinimg.com/1200x/75/fe/88/75fe8852843a41b9442fc2096287b84a.jpg" alt="Luxury Interior" loading="lazy">
+      </div>
+      <div class="arch-img reveal reveal-delay-1">
+        <img src="https://images.unsplash.com/photo-1615874694520-474822394e73?w=600&q=80" alt="Marble details" loading="lazy">
+      </div>
+      <div class="arch-img reveal reveal-delay-2">
+        <img src="https://i.pinimg.com/736x/45/4c/50/454c50989b396477064175eabf332ecb.jpg" alt="Chandeliers" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LANDMARKS -->
+<section class="landmarks" id="landmarks">
+  <p class="section-eyebrow reveal">In Sacred Company</p>
+  <span class="gold-rule reveal reveal-delay-1"></span>
+  <h2 class="section-title reveal reveal-delay-2">Every lane carries a story.<br><em>Every temple, a presence.</em></h2>
+  <div class="landmarks-grid">
+    <div class="landmark-card reveal">
+      <img src="https://thewhitebutter.netlify.app/assets/premmandir.jpg" alt="Prem Mandir" loading="lazy">
+      <div class="landmark-overlay">
+        <div class="landmark-name">Prem Mandir</div>
+        <p class="landmark-desc">A marble symphony of devotion, where light and architecture meet every evening.</p>
+      </div>
+    </div>
+    <div class="landmark-card reveal reveal-delay-1">
+      <img src="https://thewhitebutter.netlify.app/assets/kesighat.jpg" alt="Yamuna Ghat" loading="lazy">
+      <div class="landmark-overlay">
+        <div class="landmark-name">Keshi Ghat</div>
+        <p class="landmark-desc">The timeless riverfront where Vrindavan slows beside the sacred Yamuna.</p>
+      </div>
+    </div>
+    <div class="landmark-card reveal reveal-delay-2">
+      <img src="https://thewhitebutter.netlify.app/assets/ickonmndir.jpg" alt="ISKCON Temple" loading="lazy">
+      <div class="landmark-overlay">
+        <div class="landmark-name">ISKCON Vrindavan</div>
+        <p class="landmark-desc">A global spiritual landmark connecting Krishna devotees from across the world.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THE CALLING -->
+<section class="calling" id="audience">
+  <div>
+    <p class="section-eyebrow">The Calling</p>
+    <span class="gold-rule"></span>
+    <h2 class="section-title reveal">Created for those<br><em>chosen by Krishna.</em></h2>
+    <p class="section-body reveal reveal-delay-1">This is not a property for everyone. It was never meant to be. The White Butter was imagined for those who feel Vrindavan calling them — not just visiting it.</p>
+    <div class="calling-list">
+      <div class="calling-item reveal">Krishna devotees seeking a sacred home</div>
+      <div class="calling-item reveal reveal-delay-1">Spiritual luxury seekers in a religious destination</div>
+      <div class="calling-item reveal reveal-delay-2">ISKCON followers worldwide</div>
+      <div class="calling-item reveal reveal-delay-3">Legacy investors with a cultural rooting</div>
+      <div class="calling-item reveal" style="transition-delay:0.45s">International Krishna communities</div>
+    </div>
+  </div>
+  <div class="reveal reveal-delay-1">
+    <div class="calling-markets">
+      <p class="market-label">Key Markets</p>
+      <div class="market-tags">
+        <span class="market-tag">Delhi NCR</span>
+        <span class="market-tag">Ghaziabad</span>
+        <span class="market-tag">Gujarat</span>
+        <span class="market-tag">Kolkata</span>
+        <span class="market-tag">Rajasthan</span>
+        <span class="market-tag">Faridabad</span>
+        <span class="market-tag">Global ISKCON</span>
+        <span class="market-tag">International</span>
+      </div>
+    </div>
+    <br><br>
+    <p class="section-eyebrow" style="margin-bottom:1.2rem">Sacred Luxury Positioning</p>
+    <p style="font-family:'Cormorant Garamond',serif; font-size:1.5rem; font-weight:300; font-style:italic; color:rgba(253,250,244,0.7); line-height:1.5; margin-bottom:1rem;">"You don't find this place. It finds you."</p>
+    <p style="font-family:'Cormorant Garamond',serif; font-size:1.5rem; font-weight:300; font-style:italic; color:rgba(253,250,244,0.7); line-height:1.5; margin-bottom:1rem;">"Access isn't announced. It's granted."</p>
+    <p style="font-family:'Cormorant Garamond',serif; font-size:1.5rem; font-weight:300; font-style:italic; color:rgba(253,250,244,0.5); line-height:1.5;">"Some places are bought. Some places choose you."</p>
+  </div>
+</section>
+
+<!-- SACRED QUOTE -->
+<section class="sacred-quote">
+  <div class="sq-inner reveal">
+    <p class="sq-quote">"Stolen by Krishna.<br>Saved for you."</p>
+    <span class="sq-attribution">The White Butter · Vrindavan</span>
+  </div>
+</section>
+
+<!-- MANAGEMENT -->
+<section class="management">
+  <div class="mgmt-text reveal">
+    <p class="mgmt-label">Professional Management</p>
+    <h3 class="mgmt-title">World-class facility management,<br>planned with the finest names in the industry.</h3>
+  </div>
+  <div class="mgmt-firms reveal reveal-delay-1">
+    <div class="mgmt-firm">JLL</div>
+    <div class="mgmt-firm">CBRE</div>
+    <div class="mgmt-firm">Cushman & Wakefield</div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="cta">
+  <p class="cta-eyebrow reveal">Begin Your Journey</p>
+  <h2 class="cta-title reveal reveal-delay-1">A piece of white butter<br>is a blessing of Krishna.</h2>
+  <p class="cta-sub reveal reveal-delay-2">If you are reading this, perhaps you were always meant to. Inquire now and let The White Butter find you.</p>
+  <div class="cta-actions reveal reveal-delay-3">
+    <a href="mailto:inquiry@thewhitebutter.in" class="cta-btn">Request Information</a>
+    <a href="tel:+91" class="cta-link">Schedule a Call</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">The <span>White Butter</span> · Vrindavan</div>
+  <div class="footer-devika">A <span>Devika Group</span> Project · Since 1954</div>
+</footer>
+
+<script>
+  // Hero image pan
+  const heroBg = document.getElementById('heroBg');
+  setTimeout(() => heroBg.classList.add('loaded'), 100);
+
+  // Location hero image
+  const locationHero = document.getElementById('locationHero');
+  setTimeout(() => locationHero.classList.add('loaded'), 100);
+
+  // Intersection observer for reveals + gold rules
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        if (entry.target.classList.contains('gold-rule')) {
+          entry.target.classList.add('animate');
+        }
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+
+  document.querySelectorAll('.reveal, .gold-rule').forEach(el => io.observe(el));
+
+  // Parallax on hero bg
+  window.addEventListener('scroll', () => {
+    const y = window.scrollY;
+    if (y < window.innerHeight) {
+      heroBg.style.transform = `scale(1) translateY(${y * 0.3}px)`;
+    }
+  }, { passive: true });
+</script>
+</body>
+</html>
